@@ -1,0 +1,122 @@
+
+		
+		
+		int i=0;
+		for(WebElement name: stafflist) {
+			String nameText = name.getText();
+			System.out.println(nameText);
+			WebElement plus=driver.findElement(By.id("MainContent_gridUnassignedStaff_DXCBtn"+i+"Img"));
+			if(nameText.equalsIgnoreCase("Beasley, Katelyn")) {
+				plus.click();
+				break;
+			}
+			i++;
+			
+			
+			@Test(priority = 1)
+	public void reassignshift() throws InterruptedException {
+
+//		driver.findElement(By.xpath("//a[normalize-space()='Schedule']")).click();
+//		Actions actions = new Actions(driver);
+//    	WebElement menuOption = driver.findElement(By.xpath("//div[@id='nav-quicklinks-dropdown-listsA3']//a[normalize-space()='Daily Schedule']"));
+//    	actions.moveToElement(menuOption).perform();
+
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		Actions actions = new Actions(driver);
+
+		WebElement maindropdown = driver.findElement(By.xpath("//*[@id='select2-ddlDepartment-container']"));
+		maindropdown.click();
+
+		List<WebElement> comList = driver.findElements(By.xpath("//li[@class='select2-results__option']"));
+
+		for (WebElement e : comList) {
+			String eText = e.getText();
+			// System.out.println(eText);
+			if (eText.equalsIgnoreCase("CED")) {
+				e.click();
+				break;
+			}
+		}
+
+		WebElement schedule = driver.findElement(By.xpath("//a[normalize-space()='Schedule']"));
+		actions.moveToElement(schedule).perform();
+		Thread.sleep(4000);
+
+		driver.switchTo().frame("mainframe");
+		driver.switchTo().frame("TabContent");
+
+		WebElement reassignshift = driver.findElement(By.xpath("//img[contains(@title,'Reassign staff member')]"));
+		reassignshift.click();
+		Thread.sleep(2000);
+
+		driver.switchTo().defaultContent();
+		driver.switchTo().frame("popupmain_CIF-1");
+
+//		WebElement clickdept = driver
+//				.findElement(By.xpath("(//img[@class='dxGridView_gvCollapsedButton_ShiftwizardDevxtheme'])[1]"));
+//		clickdept.click();
+//		Thread.sleep(2000);
+//
+//		WebElement clickdate = driver
+//				.findElement(By.xpath("//tr[@id='ctl00_MainContent_ASPxGridView1_DXGroupRow1']//td[2]"));
+//		clickdate.click();
+//		Thread.sleep(2000);
+
+		// tr[contains(@id,'ctl00_MainContent_ASPxGridView1_DXGroupRow')]
+
+//		List<WebElement> depatlist = driver.findElements(By.xpath("//tr[contains(@id,'DXGroupRow')]"));
+//		List<WebElement> datelist = driver.findElements(By.xpath("//tr[contains(@id,'ctl00_MainContent_ASPxGridView1_DXGroupRow')]"));
+//		
+//		for (WebElement d : depatlist) {
+//			String dText = d.getText();
+//			// System.out.println(eText);
+//			if (dText.equalsIgnoreCase("Department: Raleigh Childrens ED - CED ")) {
+//				d.click();
+//				WebElement click = driver.findElement(By.xpath("//td[contains(@class,'dxGridView_gvExpandedButton_ShiftwizardDevxtheme')]"));
+//				click.click();
+//				
+//				
+//				break;
+//			}
+//		}
+
+		List<WebElement> depatlist = driver
+				.findElements(By.xpath("//tr[contains(@id,'ctl00_MainContent_ASPxGridView1_DXGroupRow')]//td[2]"));
+
+		List<WebElement> datelist = driver
+				.findElements(By.xpath("//*[contains(@id,'ctl00_MainContent_ASPxGridView1_DXGroupRow')]/td[3]"));
+
+		int i = 1, j = 0;
+		for (WebElement name : depatlist) {
+			String nameText = name.getText();
+			System.out.println(nameText);
+
+			WebElement plus = driver
+					.findElement(By.xpath("//tr[contains(@id,'ctl00_MainContent_ASPxGridView1_DXGroupRow"+i+"')]//td[1]"));
+
+			if (nameText.equalsIgnoreCase("Department: Raleigh Childrens ED - CED")) {
+				plus.click();
+
+//				for (WebElement date : datelist) {
+//					String dateText = date.getText();
+//					System.out.println(dateText);
+//					WebElement plus2 = driver.findElement(
+//							By.xpath("//*[contains(@id,'ctl00_MainContent_ASPxGridView1_DXGroupRow " + j + "')]//img"));
+//					if (dateText.equalsIgnoreCase("Date: 8/12/2022 ")) {
+//						plus2.click();
+//						break;
+//					}
+//					j++;
+//				}
+
+				break;
+			}
+			i++;
+
+		}

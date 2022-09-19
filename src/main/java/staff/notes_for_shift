@@ -1,0 +1,54 @@
+WebElement shiftbanner = driver.findElement(By.id("ASPxScheduler1_aptsBlock_AptDiv13"));
+//		shiftbanner.click();
+
+//		WebElement shiftdate = driver
+//				.findElement(By.xpath("//td[@class=' alert alert-info']//span[contains(text(),'2022')]"));
+//		String ShiftDateText = shiftdate.getText();
+//		
+//		System.out.println("Shift Date is: " + ShiftDateText);
+//		
+//		driver.switchTo().defaultContent();
+//		
+//		WebElement shiftbannerclose = driver.findElement(By.xpath("//div[@id='popupmain_HCB-1']//img"));
+//		shiftbannerclose.click();
+//		
+//		Thread.sleep(2000);
+//		
+////		driver.switchTo().defaultContent();
+//		driver.switchTo().frame("mainframe");
+
+
+
+
+	SimpleDateFormat sdfSource = new SimpleDateFormat("dd MMMM yyyy");
+//		      
+//		      //parse the string into Date object
+//		      Date date = sdfSource.parse(DateoCalText);
+//		      
+//		      //create SimpleDateFormat object with desired date format
+//		      SimpleDateFormat sdfDestination = new SimpleDateFormat("M/dd/yyyy");
+//		      
+//		      //parse the date into another format
+//		     String strDate1 = sdfDestination.format(date);
+//		      
+//		      System.out.println("Date is converted from dd/MM/yy format to MM-dd-yyyy hh:mm:ss");
+//		      System.out.println("Converted date is : " + strDate1);
+//			
+//		
+//		
+//		
+//		if (ShiftDateText.equals(strDate1)) {
+//			System.out.println("date is matching");
+//
+//		} else {
+//			System.out.println("date is not matching");
+//		}
+
+
+
+List<WebElement> DateList = driver
+//				.findElements(By.xpath("//td[@class='dxscDateCellHeader_ShiftwizardDevxtheme']"));
+//		for (WebElement dList : DateList) {
+//		String	DateoCalText = dList.getAttribute("title");
+//			// System.out.println("date of calendar is: " + DateoCalText);
+//		}
