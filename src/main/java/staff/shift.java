@@ -121,6 +121,7 @@ public class shift {
 			WebElement shiftdate = driver
 					.findElement(By.xpath("//td[@class=' alert alert-info']//span[contains(text(),'2022')]"));
 			String ShiftDateText = shiftdate.getText();
+			
 			System.out.println("after getting date ");
 			// System.out.println("shift details are: " + ShiftText);
 			System.out.println("shift date which is get from shift banner: " + ShiftDateText);
